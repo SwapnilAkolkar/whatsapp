@@ -5,8 +5,8 @@ const mDate = (dateString) => {
 
 	let dualize = (x) => x < 10 ? "0" + x : x;
 	let getTime = () => dualize(date.getHours()) + ":" + dualize(date.getMinutes());
-	let getDate = () => dualize(date.getDate()) + "/" + dualize(date.getMonth()) + "/" + dualize(date.getFullYear());
-
+	//let getDate = () => dualize(date.getDate()) + "/" + dualize(date.getMonth()) + "/" + dualize(date.getFullYear());
+	let getDate = () => dualize(date.getDate()) + "/" + (parseInt(date.getMonth())+1) + "/" + dualize(date.getFullYear());
 	return {
 		subtract: (otherDateString) => {
 			return date - new Date(otherDateString);
